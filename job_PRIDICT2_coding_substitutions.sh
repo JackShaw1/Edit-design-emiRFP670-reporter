@@ -89,7 +89,7 @@ while IFS=, read -r EDIT _rest; do
   PRED_FILE="predictions/${SEQ_NAME}_pegRNA_Pridict_full.csv"
 
   if [[ -f "$PRED_FILE" ]]; then
-    python Match_scores_coding.py "$PRED_FILE" "${EDIT_UPPER}"
+    python Match_scores_coding_subs.py "$PRED_FILE" "${EDIT_UPPER}"
     # rm -f "$PRED_FILE"  # optional cleanup
   else
     echo "WARNING: Expected predictions file not found for ${SEQ_NAME}: ${PRED_FILE}" >&2
